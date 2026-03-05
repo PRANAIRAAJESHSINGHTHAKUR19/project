@@ -1,1 +1,26 @@
+{
+    agent any
 
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/PRANAIRAAJESHSINGHTHAKUR19/my-first-repo'
+            }
+        }
+        stage('Compile') {
+            steps {
+                bat 'javac Hello.java'
+            }
+        }
+        stage('Run') {
+            steps {
+                bat 'java Hello'
+            }
+        }
+        stage('Result') {
+            steps {
+                echo 'Execution completed successfully.'
+            }
+        }
+    }
+}
